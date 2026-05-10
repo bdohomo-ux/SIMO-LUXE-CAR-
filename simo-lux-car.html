@@ -1,0 +1,603 @@
+# SIMO-LUXE-CAR-
+Mrhba bi ljami3 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨🚘 SIMO LUXE CAR 🚘✨ - Location de voitures au Maroc</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            animation: whatsapp-bounce 2s infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            text-decoration: none !important;
+            color: white !important;
+            transform: scale(1.1);
+        }
+
+        @keyframes whatsapp-bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .whatsapp-btn {
+            background: #25d366 !important;
+            color: white !important;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128c7e !important;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231e3c72" width="1200" height="600"/><path fill="%232a5298" d="M0 300 Q300 0 600 300 T1200 300 V600 H0 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e3c72;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #25d366;
+            margin-bottom: 1rem;
+        }
+
+        /* Cars Gallery */
+        .cars-gallery {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .cars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .car-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .car-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .car-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .car-card:hover .car-image {
+            transform: scale(1.05);
+        }
+
+        .car-info {
+            padding: 1.5rem;
+        }
+
+        .car-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+
+        .car-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #25d366;
+            margin-bottom: 1rem;
+        }
+
+        .whatsapp-car-btn {
+            width: 100%;
+            background: #25d366 !important;
+            color: white !important;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 1rem;
+        }
+
+        .whatsapp-car-btn:hover {
+            background: #128c7e !important;
+            transform: translateY(-2px);
+            color: white !important;
+        }
+
+        /* Locations Section */
+        .locations {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .location-item i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #25d366;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            color: #1e3c72;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: #25d366;
+            width: 50px;
+            text-align: center;
+        }
+
+        .big-whatsapp {
+            font-size: 2.5rem !important;
+            font-weight: 700 !important;
+            color: #25d366 !important;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/212609614140?text=🚘%20Bonjour%20!%20Je%20souhaite%20réserver%20une%20voiture%20chez%20SIMO%20LUXE%20CAR%20✨%0A%0A📍%20À%20l'aéroport%20Mohammed%20V%0A🇲🇦%20Location%20de%20voitures%20de%20luxe" 
+       class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-car-side"></i>
+                SIMO LUXE CAR
+            </div>
+            <a href="https://wa.me/212609614140?text=🚘%20Bonjour%20SIMO%20LUXE%20CAR%20!%20Disponible%20?%20✨" 
+               class="whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> Réserver WhatsApp
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>✨🚘 SIMO LUXE CAR 🚘✨</h1>
+            <p>Votre agence de confiance pour la location de voitures au Maroc 🇲🇦<br>Service premium à l'aéroport Mohammed V</p>
+            <a href="https://wa.me/212609614140?text=✈️%20Bonjour%20!%20J'arrive%20à%20l'aéroport%20Mohammed%20V%20🚗%20Quelle%20voiture%20disponible%20?%0A%0A👇%20Choisissez%20votre%20voiture%20préférée%20!" 
+               class="whatsapp-btn" target="_blank" style="font-size: 1.2rem; padding: 18px 50px;">
+                <i class="fab fa-whatsapp"></i> Réservez sur WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Nos Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-plane-arrival"></i>
+                    </div>
+                    <h3>À l'aéroport Mohammed V</h3>
+                    <p>Service disponible 24/7 à مطار محمد الخامس</p>
+                    <a href="https://wa.me/212609614140?text=✈️%20Bonjour%20!%20J'ai%20besoin%20d'une%20voiture%20à%20l'aéroport%20Mohammed%20V" 
+                       class="whatsapp-btn" target="_blank" style="margin-top: 1rem;">Réservez</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Large choix de véhicules</h3>
+                    <p>Moderne, confortable et adapté à tous vos besoins</p>
+                    <a href="https://wa.me/212609614140?text=🚗%20Bonjour%20!%20Je%20cherche%20une%20voiture%20de%20luxe%20pour..." 
+                       class="whatsapp-btn" target="_blank" style="margin-top: 1rem;">Découvrir</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Flexibilité totale</h3>
+                    <p>Location courte et longue durée disponible</p>
+                    <a href="https://wa.me/212609614140?text=⏰%20Bonjour%20!%20Pour%20combien%20de%20jours%20voulez-vous%20louer%20?" 
+                       class="whatsapp-btn" target="_blank" style="margin-top: 1rem;">Tarifs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cars Gallery -->
+    <section class="cars-gallery">
+        <div class="container">
+            <h2 class="section-title">Nos Voitures Disponibles</h2>
+            <div class="cars-grid">
+                <div class="car-card">
+                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=400&h=250&fit=crop" alt="Mercedes Classe S" class="car-image">
+                    <div class="car-info">
+                        <div class="car-title">Mercedes Classe S</div>
+                        <div class="car-price">800 MAD/jour</div>
+                        <a href="https://wa.me/212609614140?text=🚘%20Mercedes%20Classe%20S%20-%20800%20MAD/jour%0A%0A📅%20Dates%20de%20location%20:%0A✈️%20Vol%20d'arrivée%20:%0A👥%20Nombre%20de%20personnes%20:%0A%0A%20SIMO%20LUXE%20CAR%20✨" 
+                           class="whatsapp-car-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Réserver
+                        </a>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=250&fit=crop" alt="BMW Série 7" class="car-image">
+                    <div class="car-info">
+                        <div class="car-title">BMW Série 7</div>
+                        <div class="car-price">750 MAD/jour</div>
+                        <a href="https://wa.me/212609614140?text=🚘%20BMW%20Série%207%20-%20750%20MAD/jour%0A%0A📅%20Dates%20:%0A✈️%20Vol%20:%0A👥%20Passagers%20:%0A%0ASIMO%20LUXE%20CAR%20✨" 
+                           class="whatsapp-car-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Réserver
+                        </a>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="https://images.unsplash.com/photo-1603796846096-bee99a61ee1b?w=400&h=250&fit=crop" alt="Range Rover" class="car-image">
+                    <div class="car-info">
+                        <div class="car-title">Range Rover Sport</div>
+                        <div class="car-price">900 MAD/jour</div>
+                        <a href="https://wa.me/212609614140?text=🚘%20Range%20Rover%20Sport%20-%20900%20MAD/jour%0A%0A📅%20Quand%20?%0A✈️%20Aéroport%20?%0A%0ASIMO%20LUXE%20CAR%20✨" 
+                           class="whatsapp-car-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Réserver
+                        </a>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="https://images.unsplash.com/photo-1545156524-6e734443a1cf?w=400&h=250&fit=crop" alt="Audi A8" class="car-image">
+                    <div class="car-info">
+                        <div class="car-title">Audi A8</div>
+                        <div class="car-price">700 MAD/jour</div>
+                        <a href="https://wa.me/212609614140?text=🚘%20Audi%20A8%20-%20700%20MAD/jour%0A%0A✅%20Parfait%20prix%20!%0A📅%20Dates%20:%0A✈️%20Vol%20:%0A%0ASIMO%20LUXE%20CAR" 
+                           class="whatsapp-car-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Réserver
+                        </a>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="https://images.unsplash.com/photo-1547803158-19569e3f45b4?w=400&h=250&fit=crop" alt="Porsche Cayenne" class="car-image">
+                    <div class="car-info">
+                        <div class="car-title">Porsche Cayenne</div>
+                        <div class="car-price">1200 MAD/jour</div>
+                        <a href="https://wa.me/212609614140?text=🚘%20Porsche%20Cayenne%20-%201200%20MAD/jour%0A%0A💎%20Luxe%20total%20!%0A📅%20Réservation%20:%0A✈️%20Mohammed%20V%20:%0A%0ASIMO%20LUXE%20CAR" 
+                           class="whatsapp-car-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Réserver
+                        </a>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="https://images.unsplash.com/photo-1547731614-606d3d1d6b62?w=400&h=250&fit=crop" alt="Tesla Model S" class="car-image">
+                    <div class="car-info">
+                        <div class="car-title">Tesla Model S</div>
+                        <div class="car-price">1000 MAD/jour</div>
+                        <a href="https://wa.me/212609614140?text=🚘%20Tesla%20Model%20S%20-%201000%20MAD/jour%0A%0A⚡%20Électrique%20luxe%20!%0A📅%20Dates%20:%0A✈️%20Vol%20:%0A%0ASIMO%20LUXE%20CAR%20✨" 
+                           class="whatsapp-car-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Réserver
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations -->
+    <section class="locations">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Service Disponible À</h2>
+            <div class="locations-grid">
+                <div class="location-item">
+                    <i class="fas fa-plane"></i>
+                    <div>
+                        <h3>✈️ مطار محمد الخامس</h3>
+                        <p>Aéroport Mohammed V</p>
+                    </div>
+                </div>
+                <div class="location-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Casablanca</h3>
+                        <p>Service à domicile disponible</p>
+                    </div>
+                </div>
+                <div class="location-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <h3>24/7</h3>
+                        <p>Disponible tous les jours</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>📱 Réservation Instantanée WhatsApp</h3>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp big-whatsapp"></i>
+                        <div>
+                            <h4>+212 609 614 140</h4>
+                            <p>Cliquez pour ouvrir WhatsApp</p>
+                            <a href="https://wa.me/212609614140?text=🚘%20Bonjour%20SIMO%20LUXE%20CAR%20!%20%0AJe%20suis%20intéressé(e)%20par%20la%20location%20:%0A%0A📅%20Dates%20:%0A✈️%20Aéroport%20:%0A🚗%20Type%20voiture%20:%0A%0A✨%20Merci%20!" 
+                               class="whatsapp-btn" target="_blank" style="margin-top: 10px;">Chat WhatsApp</a>
+                        </div>
+                    </div>
+                    <p style="margin-top: 2rem; font-size: 1.1rem; color: #666;">
+                        💎 Service rapide, sérieux et professionnel<br>
+                        ✅ Prix compétitifs - Disponible 24/7<br>
+                        🚗 Votre confort est notre priorité
+                    </p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="background: #25d366; color: white; padding: 3rem; border-radius: 20px; box-shadow: 0 15px 35px rgba(37,211,102,0.4);">
+                        <i class="fab fa-whatsapp" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+                        <h2>📲 Réservez en 1 clic !</h2>
+                        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Ouvert directement sur WhatsApp</p>
+                        <a href="https://wa.me/212609614140?text=👋%20Bonjour%20!%20Voiture%20disponible%20à%20Mohammed%20V%20?%20✈️" 
+                           class="whatsapp-btn" target="_blank" style="font-size: 1.3rem; padding: 20px 60px;">
+                            <i class="fab fa-whatsapp"></i> OUVRIR WHATSAPP
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SIMO LUXE CAR. Tous droits réservés. | Location de voitures de luxe au Maroc 🇲🇦 | <a href="https://wa.me/212609614140" style="color: #25d366;">📱 WhatsApp</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+                      </html>
